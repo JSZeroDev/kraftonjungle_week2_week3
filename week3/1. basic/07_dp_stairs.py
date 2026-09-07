@@ -35,6 +35,7 @@ DP 문제 풀이 순서:
 5. 구현 및 검증
 """
 
+
 def climb_stairs(n):
     """
     계단 오르기 (상향식 DP)
@@ -45,15 +46,22 @@ def climb_stairs(n):
     Returns:
         n번째 계단까지 오르는 방법의 수
     """
+    dp = []
     # TODO: 특별한 경우 처리
-    pass
-    
-    
+    for i in range(n+1) :
+        dp.append(i)
+        if i == 0 :
+            dp[0] = 0
+        elif i == 1 :
+            dp[1] = 1
+        elif i == 2 :
+            dp[2] = 2
+        
     # TODO: dp 배열 생성 및 초기화
-    pass
-    
+    for i in range(3, n+1) :
+        
     # TODO: 작은 문제부터 차례로 계산
-    pass
+        dp[i] = dp[i-1] + dp[i-2]
     
     return dp[n]
 
